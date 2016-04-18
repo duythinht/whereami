@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 
@@ -14,13 +15,23 @@ func main() {
 	fmt.Println("Bootstrap Where Am I server...")
 
 	var count int64
-	client, _ := statsd.NewClient("108.60.126.255:8125", "test-client")
+	client, err := statsd.NewClient("108.61.126.255:8125", "whereami")
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	defer client.Close()
+
+	client.Inc("stat1", 42, 1.0)
 
 	m := martini.Classic()
 	m.Use(render.Renderer())
 
-	m.Use(func(req http.Request) {
+	m.Use(func(c martini.Context, req *http.Request, log *log.Logger) {
+		c.Next()
 		client.Timing("response.GET./.200", count, 1.0)
+		log.Println("After request	")
 	})
 
 	m.Get("/", func(r render.Render) {
