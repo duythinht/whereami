@@ -1,8 +1,13 @@
 {
-	"ImportPath": "duythinht/whoami",
+	"ImportPath": "github.com/duythinht/whereami",
 	"GoVersion": "go1.6",
 	"GodepVersion": "v62",
 	"Deps": [
+		{
+			"ImportPath": "github.com/cactus/go-statsd-client/statsd",
+			"Comment": "v3.0.3-15-g5517f30",
+			"Rev": "5517f304319b9a066354b84860cb264c89655f69"
+		},
 		{
 			"ImportPath": "github.com/codegangsta/inject",
 			"Comment": "v1.0-rc1-10-g33e0aa1",
