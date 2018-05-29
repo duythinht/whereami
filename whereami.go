@@ -24,7 +24,7 @@ func main() {
 			"data": map[string]interface{}{
 				"Hostname": hostname,
 				"Count":    count,
-				"Version":  4,
+				"Version":  5,
 			},
 		})
 	})
