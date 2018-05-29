@@ -45,9 +45,9 @@ func main() {
 		r.JSON(200, map[string]interface{}{
 			"ok": true,
 			"data": map[string]interface{}{
-				"hostname": hostname,
-				"count":    count,
-				"version":  3,
+				"Hostname": hostname,
+				"Count":    count,
+				"Version":  4,
 			},
 		})
 	})
