@@ -14,10 +14,6 @@ func main() {
 
 	var count int64
 
-	if err != nil {
-		log.Fatal(err)
-	}
-
 	m := martini.Classic()
 	m.Use(render.Renderer())
 
