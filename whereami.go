@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"os"
 
 	"github.com/go-martini/martini"
@@ -13,10 +12,6 @@ func main() {
 	fmt.Println("Bootstrap Where Am I server...")
 
 	var count int64
-
-	if err != nil {
-		log.Fatal(err)
-	}
 
 	m := martini.Classic()
 	m.Use(render.Renderer())
